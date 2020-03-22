@@ -1,19 +1,13 @@
 import axios from "axios"
 import { useRouter } from 'next/router'
-import Link from "next/link"
+import Movie from '../components/Movie'
 
 const Index = (props) => {
   const router = useRouter();
   return (
     <ol>
-      {props.movies.map(movie => (<li>
-          Título: {movie.title}
-          Título2: {movie.title}
-          <Link 
-              href="/movies/[movie.id]" 
-              as={`/movies/${movie.id}`}>
-              <a>Details</a>
-          </Link>
+      {props.movies.map(m => (<li>
+          <Movie movie={m} />
       </li>))}
     </ol>
   )
