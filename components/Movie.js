@@ -1,10 +1,11 @@
 import Link from 'next/link'
+import {Atalho, ItemLista} from './Visual'
 
 export default ({ movie }) => (
   <div>
     <p>
-      Título: {movie.title}
-      <Link href="/movies/[id]" as={`/movies/${movie.id}`}><a>Detalhes</a></Link>
+      <ItemLista> Título: {movie.title} </ItemLista>
+      <Link href="/movies/[id]" as={`/movies/${movie.id}`}><a><Atalho>Detalhes</Atalho></a></Link>
     </p>
   </div>
 )
