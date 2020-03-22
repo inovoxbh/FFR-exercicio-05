@@ -1,4 +1,5 @@
 import axios from "axios"
+import Link from 'next/link'
 
 const Index = (props) => {
   return (
@@ -8,6 +9,10 @@ const Index = (props) => {
         <p>{props.movie.overview}</p>
         <h3>Lançamento</h3>
         <p>{props.movie.release_date}</p>
+        <Link href="/" >
+            <a>Voltar</a>
+        </Link>
+
     </div>
   )
 }
