@@ -1,19 +1,18 @@
 import axios from "axios"
-import { useRouter } from 'next/router'
 import Movie from '../components/Movie'
 
 const Index = (props) => {
-  const router = useRouter();
   return (
     <ol>
-      {props.movies.map(m => (<li>
-          <Movie movie={m} />
+      {props.movies.map((m,i) => (<li>
+          <Movie movie={m} key={i}/>
       </li>))}
     </ol>
   )
 }
 
-export async function getStaticProps() {
+//getStaticProps
+export async function getServerSideProps() {
   const response = await axios('http://localhost:3000/api/movies');
 
   return { 
