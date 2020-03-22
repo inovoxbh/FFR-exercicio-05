@@ -1,23 +1,15 @@
 import axios from "axios"
-import Movie from '../components/Movie'
+import Link from 'next/link'
 
-const Index = (props) => {
+const Home = (props) => {
   return (
-    <ol>
-      {props.movies.map((m,i) => (<li>
-          <Movie movie={m} key={i}/>
-      </li>))}
-    </ol>
+      <main>
+          <h1>Filmes Populares</h1>
+          <Link href="/movies">
+            <a>Lista de Filmes</a>
+          </Link>
+      </main>
   )
 }
 
-//getStaticProps
-export async function getServerSideProps() {
-  const response = await axios('http://localhost:3000/api/movies');
-
-  return { 
-    props: {movies: response.data }
-  }
-}
-
-export default Index
+export default Home

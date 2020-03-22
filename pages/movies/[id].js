@@ -9,10 +9,14 @@ const Index = (props) => {
         <p>{props.movie.overview}</p>
         <h3>Lançamento</h3>
         <p>{props.movie.release_date}</p>
-        <Link href="/" >
-            <a>Voltar</a>
+        <Link href="/movies" >
+            <a>Lista de Filmes</a>
         </Link>
-
+        <br/>
+        <br/>
+        <Link href="/" >
+            <a>Home</a>
+        </Link>
     </div>
   )
 }
